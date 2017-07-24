@@ -16,6 +16,16 @@ $(document).ready(function () {
       var $li = $('<li>' + (index + 1) + '</li>');
 
       $li.on('click', function() {
+        if (index === 0) {
+          $('.prev').addClass('notshown');
+          $('.next').removeClass('notshown');
+        } else if (index === array.length-1) {
+          $('.next').addClass('notshown');
+          $('.prev').removeClass('notshown');
+        } else {
+          $('.next').removeClass('notshown');
+          $('.prev').removeClass('notshown');
+        }
         $h1.text(item.title);
         $body.css('background-image', 'url('+item.src+')');
         $link
